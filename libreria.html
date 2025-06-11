@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libreria</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="img/ICONOMEJ.png">
+    <style>
+        
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            background-color: #d9bfe2;
+            color: #333;
+        }
+
+        header {
+            background-color: #875a92;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        
+        .catalogo-container {
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 30px; 
+            padding: 40px 20px;
+        }
+
+        
+        .catalogo-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            text-align: center;
+            width: 280px; 
+            transition: transform 0.2s ease-in-out; 
+        }
+
+        .catalogo-item:hover {
+            transform: translateY(-5px); 
+        }
+
+        .catalogo-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px; 
+            margin-bottom: 15px;
+        }
+
+        .catalogo-item h2 {
+            font-size: 1.5em;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #ba4dcb;
+        }
+
+        .catalogo-item p {
+            font-size: 0.9em;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .catalogo-item .precio {
+            display: block; 
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #28a745; 
+            margin-bottom: 20px;
+        }
+
+        .catalogo-item button {
+            background-color: #b977d8;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.2s;
+        }
+
+        .catalogo-item button:hover {
+            background-color: #7a00b3;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #513758;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <nav id="atras">
+        <ul>
+          <li>
+          </li>
+        <a href="index.html">Inicio</a>
+        </li>
+       </ul>
+      </nav>
+    <header>
+        <h1>Librería</h1>
+    </header>
+
+    <main class="catalogo-container">
+        <div class="catalogo-item">
+            <img src="img/portalapiz.jpeg" alt="Producto 1">
+            <h2>House Soport</h2>
+            <p>Porta lapices en forma de la iconica casa de snoopy.</p>
+            <span class="precio">$10.500 c/u</span>
+            <button>Agregar al carrito</button>
+        </div>
+
+        <div class="catalogo-item">
+            <img src="img/calcu.jpeg" alt="Producto 2">
+            <h2>Calculadora SnoopyMath</h2>
+            <p>Calculadora cientifica de snoopy.</p>
+            <span class="precio">$20.000 c/u</span>
+            <button>Agregar al carrito</button>
+        </div>
+
+        <div class="catalogo-item">
+            <img src="img/cuaderno.jpeg" alt="Producto 3">
+            <h2>Anotador Peanuts</h2>
+            <p>Pack de 5 anotadores de snoopy de 15x10cm.</p>
+            <span class="precio">$15.000</span>
+            <button>Agregar al carrito</button>
+        </div>
+
+        <div class="catalogo-item">
+            <img src="img/lapiceras.jpg" alt="Producto 3">
+            <h2>SnoopyPencil</h2>
+            <p>Lapicera con cabezal de snoopy</p>
+            <p>Colores de tinta: Rjo, Azul, Negro y Amarillo.</p>
+            <span class="precio">$2.000 c/u</span>
+            <button>Agregar al carrito</button>
+        </div>
+
+        <div class="catalogo-item">
+            <img src="img/pines.jpeg" alt="Producto 3">
+            <h2>Button Colection</h2>
+            <p>Pack de 4 pines llamativos y esmaltados.</p>
+            <span class="precio">$3.500</span>
+            <button>Agregar al carrito</button>
+        </div>
+
+        <div class="catalogo-item">
+            <img src="img/anotador.jpg" alt="Producto 3">
+            <h2>Mini Bosque</h2>
+            <p>Anotador de bolsillo color verde y blanco, versión camp.</p>
+            <span class="precio">$5.500 c/u</span>
+            <button>Agregar al carrito</button>
+        </div>
+
+        <div class="catalogo-item">
+            <img src="img/Mini Calendario de escritorio Snoopy 2025, calendario con soporte de Anime, planificador diario,.jpeg" alt="Producto 3">
+            <h2>Mini Calendaario</h2>
+            <p>Calendario con sosten propio de multiples colores, tamaño: 7x6.</p>
+            <span class="precio">$1.500 c/u</span>
+            <button>Agregar al carrito</button>
+        </div>
+
+        </main>
+
+    <footer>
+        <p>&copy;SnoopyShoppMT</p>
+    </footer>
+</body>
+</html>

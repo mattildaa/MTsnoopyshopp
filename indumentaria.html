@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indumentaria</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="img/ICONOMEJ.png">
+    <style>
+       
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            background-color: #d9bfe2;
+            color: #333;
+        }
+
+        header {
+            background-color: #875a92;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        /* Contenedor del Catálogo */
+        .catalogo-container {
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 30px; 
+            padding: 40px 20px;
+        }
+
+        .catalogo-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            text-align: center;
+            width: 280px; 
+            transition: transform 0.2s ease-in-out; 
+        }
+
+        .catalogo-item:hover {
+            transform: translateY(-5px); 
+        }
+
+        .catalogo-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px; 
+            margin-bottom: 15px;
+        }
+
+        .catalogo-item h2 {
+            font-size: 1.5em;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #ba4dcb;
+        }
+
+        .catalogo-item p {
+            font-size: 0.9em;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .catalogo-item .precio {
+            display: block; 
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #28a745; 
+            margin-bottom: 20px;
+        }
+
+        .catalogo-item button {
+            background-color: #b977d8;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.2s;
+        }
+
+        .catalogo-item button:hover {
+            background-color: #7a00b3;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #513758;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <nav id="atras">
+        <ul>
+          <li>
+          </li>
+        <a href="index.html">Inicio</a>
+        </li>
+       </ul>
+      </nav>
+    <header>
+        <h1>Indumentaria</h1>
+    </header>
+
+    <main class="catalogo-container">
+        <div class="catalogo-item">
+            <img src="img/BUZITO.jpeg" alt="Producto 1">
+            <h2>Sweater de hilo</h2>
+            <p>Talle único y también disponible en lila.</p>
+            <span class="precio">$20.000</span>
+            <button>Agregar al carrito</button>
+        </div>
+
+        <div class="catalogo-item">
+            <img src="img/REMERA.jpeg" alt="Producto 2">
+            <h2>Remera de algodón </h2>
+            <p>Talle: L y M, también disponible en negra.</p>
+            <span class="precio">$15.000</span>
+            <button>Ver Detalles</button>
+        </div>
+
+        <div class="catalogo-item">
+            <img src="img/zapas.jpg" alt="Producto 3">
+            <h2>Zapatillas Converse de Edición limitada 3</h2>
+            <p>Zapatillas importadas con talles al partir del: 36 hasta el 44.</p>
+            <span class="precio">$75.000</span>
+            <button>Ver Detalles</button>
+        </div>
+
+        <div class="catalogo-item">
+            <img src="img/remeraconletrasazules.jpg" alt="Producto 3">
+            <h2>Remera Vintage 3</h2>
+            <p>Remera %100 de algodón, unicamente con la estampa en azul.
+            Talle: S, M, L, XL Y XXL.
+            </p>
+            <span class="precio">$19.000</span>
+            <button>Ver Detalles</button>
+        </div>
+
+        <div class="catalogo-item">
+            <img src="img/MEDIAS.jpeg" alt="Producto 3">
+            <h2>Medias edición campamento</h2>
+            <p>Pack de 4 pares de media de algodón. </p>
+            <span class="precio">$7.000</span>
+            <button>Ver Detalles</button>
+        </div>
+
+        <div class="catalogo-item">
+            <img src="img/gorra.jpg" alt="Producto 3">
+            <h2> Gorra Jean black3</h2>
+            <p>Gorra de mezclilla, con bordado.</p>
+            <p>Color disponible: Negro y Azul.</p>
+            <span class="precio">$15.000</span>
+            <button>Ver Detalles</button>
+        </div>
+
+        <div class="catalogo-item">
+            <img src="img/descarga (5).jpeg" alt="Producto 3">
+            <h2>Conjunto Snoopy Camp</h2>
+            <p>Conjunto de remera + short + par de medias.</p>
+            <p>Talle de remera: S, L y XL</p>
+            <span class="precio">$60.000</span>
+            <button>Ver Detalles</button>
+        </div>
+
+        </main>
+
+    <footer>
+        <p>&copy; SnoopyshoppMT.</p>
+    </footer>
+</body>
+</html>

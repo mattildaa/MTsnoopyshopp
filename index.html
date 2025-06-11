@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SnoopyshoppMT</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="img/ICONOMEJ.png">
+  <style>
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      color: #f2f0eb;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f0eb;
+    }
+    header {
+      background-color: #895991;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #ac7fb6;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px;
+    }
+    section {
+      padding: 20px;
+    }
+    footer {
+      background-color: #ac7fb6;
+      color: #fafafa;
+      padding: 20px;
+      text-align: center;
+    }
+    @media only screen and (max-width: 600px) {
+      nav {
+        display: block;
+      }
+      nav a {
+        display: block;
+        margin-bottom: 10px;
+      }
+    }
+    .main-navbar {
+    background-color: #f2f0eb
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex; 
+    justify-content: center; 
+  }
+  
+  .navbar-links-horizontal {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 60px; 
+  }
+  
+  .navbar-links-horizontal li {
+
+  }
+  
+  .navbar-links-horizontal a {
+    color: #f2f0eb ; 
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 8px 15px;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  .navbar-links-horizontal a:hover {
+    color: #b445e4; 
+    transform: translateY(-2px); 
+  }
+  
+  .navbar-links-horizontal a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: #754689; 
+    bottom: -5px; 
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+  }
+  
+  .navbar-links-horizontal a:hover::after {
+    width: 100%;
+  }
+  
+  /* por si las duditas*/
+  @media (max-width: 600px) {
+    .navbar-links-horizontal {
+      flex-direction: column; 
+      gap: 15px; 
+      align-items: center; 
+    }
+  }
+
+  .product-navbar {
+  background-color: #f2f0eb; /* Lila claro */
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.navbar-brand {
+  color: #aa69c6; 
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.navbar-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar-links li {
+  margin-left: 30px;
+}
+
+.navbar-links a {
+  color: #ac7fb6; 
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 500;
+  padding: 5px 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #9f76bc; 
+  transition: width 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: #5c178d; 
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
+}
+
+/* solo por si las dudas*/
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .navbar-brand {
+    margin-bottom: 15px;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar-links li {
+    margin: 10px 0;
+  }
+}
+
+#aa {
+  background-image: url( img/BUZITO.jpeg);
+  width: 180px;
+  margin-right: 110px;
+  margin-left: 150px;
+  margin-top: 100px;
+}
+#ab {
+  background-image: url(img/tazaazul.jpeg);
+  width: 180px;
+  margin-right: 110px;
+  margin-left: 50px;
+}
+#ac {
+  background-image: url(img/mochilaforest.jpg);
+  width: 180px;
+  margin-right: 110px;
+  margin-left: 50px;
+}
+#ad {
+  background-image: url(img/cartu.jpeg);
+  width: 180px;
+  margin-right: 110px;
+  margin-left: 50px;
+}
+#ba {
+  background-image: url(img/calcu.jpeg);
+  width: 180px;
+  margin-right: 110px;
+  margin-left: 150px;
+  margin-top: 100px;
+}
+#bb {
+  background-image: url(img/TOTELOVE.jpeg);
+  width: 180px;
+  margin-right: 110px;
+  margin-left: 50px;
+}
+#bc {
+  background-image: url(img/tazarockstar.jpeg);
+  width: 180px;
+  margin-right: 110px;
+  margin-left: 50px;
+}
+#bd {
+  background-image: url(img/zapas.jpg);
+  width: 180px;
+  margin-right: 110px;
+  margin-left: 50px;
+}
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>SnoopyshoppMT</h1>
+  </header>
+
+  <nav class="main-navbar">
+    <ul class="navbar-links-horizontal">
+      <li><a href="inicio.html">Inicio</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <nav class="product-navbar">
+    <div class="navbar-container">
+      <a href="#" class="navbar-brand">¡ Mirá nuestros productos !</a>
+      <ul class="navbar-links">
+        <li><a href= "indumentaria.html">Indumentaria</a></li>
+        <li><a href="tazas.html">Tazas</a></li>
+        <li><a href="mochilatote.html">Mochilas/Tote</a></li>
+        <li><a href="libreria.html">Librería</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  
+  <head>
+    <img id="aa" src="img/BUZITO.jpeg">
+    <img id="ab" src="img/tazaazul.jpeg">
+    <img id="ac" src="img/mochilaforest.jpg">
+    <img id="ad" src="img/cartu.jpeg">
+  </head> 
+
+  <head>
+    <img id="ba" src="img/calcu.jpeg">
+    <img id="bb" src="img/TOTELOVE.jpeg">
+    <img id="bc" src="img/tazarockstar.jpeg">
+    <img id="bd" src="img/zapas.jpg">
+  </head>
+
+  <div style="background-color: #ac7fb6; padding: 25px; margin-left: 100px; margin-right: 100px ; margin-top: 130px ;margin-bottom: 120px   ;border: 2px solid #9b00d4; border-radius: 15px; text-align: center; box-shadow: 3px 3px 8px rgba(0,0,0,0.2);">
+    <p style="color: #ffffff; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 18px; margin: 0;">
+      <h2> UN POCO DE NOSOTROS: </h2>
+      <h2> Desde el 14 de septiembre del año pasado, hemos abierto las puertas de un lugar donde la magia de Peanuts cobra vida. En "SnoopyshoppMT", nuestra misión es clara y burbujeante como el café de Charlie Brown: queremos ser el refugio donde los sueños caninos se hacen realidad, transformando la nostalgia en alegría palpable.
+
+        Acá, cada artículo es más que un simple producto; es un pedazo de esa amistad inquebrantable, esa imaginación sin límites y esa inocencia que nos ha acompañado por generaciones. Desde las sonrisas en las tazas de tu café matutino hasta las aventuras en tus camisetas favoritas, nuestra finalidad es llenar tu mundo de la misma felicidad que Snoopy encuentra en una siesta sobre su casita o en un vuelo imaginario como el Barón Rojo. </h2>
+    </p>
+  </div>
+
+    <script src="https://kit.fontawesome.com/14bdcc382b.js" crossorigin="anonymous"></script>
+    <body>
+      <p> 
+    <h1>¡Mirá nuestras redes! </h1>
+    </p>
+    <nav class="social-nav">
+      <h1>
+        <a href="https://www.facebook.com/snoopyshoppmt" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.x.com/snoopyshoppmt" target="_blank"><i class="fab fa-x"></i></a>
+        <a href="https://www.instagram.com/snoopyshoppmt/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://wa.me/541139159704" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      </h1> 
+
+      </nav>
+  </footer>
+
+</body>
+</html>

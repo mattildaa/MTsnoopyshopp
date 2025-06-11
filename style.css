@@ -1,0 +1,368 @@
+
+/*PARTE DE CONTACTO*/
+
+body {
+    font-family: 'Times New Roman', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #000000;
+    
+}
+
+.contact-container {
+    background-color: #e2cfe8;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+h2 {
+    color: #983bb4; 
+    margin-bottom: 15px;
+    font-size: 2.2em;
+    font-weight: 700;
+}
+
+p {
+    color: #555;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: #444;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: calc(100% - 20px);
+    padding: 12px;
+    border: 1px solid #6b3e7b;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: #8c49a7;
+    outline: none;
+    box-shadow: 0 0 5px rgba(40, 1, 140, 0.3);
+}
+
+.contact-form textarea {
+    resize: vertical; 
+    min-height: 100px;
+}
+
+.submit-button {
+    background-color: #863db6; 
+    color: rgb(255, 255, 255);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+}
+
+.submit-button:hover {
+    background-color: #6f006d; 
+    transform: translateY(-2px);
+}
+
+.contact-info {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #7c0a9f;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.contact-info a {
+    color: #52235c;
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #52235c; 
+    text-decoration: underline;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .social-nav {
+    background-color: #e2cfe8;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .social-nav a {
+    color: #865599;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 24px;
+  }
+  
+  .social-nav a:hover {
+    color: #692575; 
+  }
+
+
+/* ACÁ TERMINA LA PARTE DE CONTACTO con las redess*/
+
+
+/*parte de catalogo*/
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .header {
+    background-color: #fafafa;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+  }
+  
+  .row {
+    display: -webkit-flex;
+    display: flex;
+  }
+  
+  .column {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding: 10px;
+    height: 300px; 
+  }
+  
+  .footer {
+    background-color: #919191;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  @media (max-width: 600px) {
+    .row {
+      -webkit-flex-direction: column;
+      flex-direction: column;
+    }
+  }
+  
+  .product-navbar {
+    background-color: #e0b0ff; /* Lila claro */
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  .navbar-brand {
+    color: #6a0dad; /* Lila oscuro para el texto principal */
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 1px;
+  }
+  
+  .navbar-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .navbar-links li {
+    margin-left: 30px;
+  }
+  
+  .navbar-links a {
+    color: #8a2be2; /* Lila medio para los enlaces */
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #6a0dad; /* Lila oscuro para el subrayado al pasar el ratón */
+    transition: width 0.3s ease;
+  }
+  
+  .navbar-links a:hover {
+    color: #6a0dad; /* Cambia a lila oscuro al pasar el ratón */
+  }
+  
+  .navbar-links a:hover::after {
+    width: 100%;
+  }
+  
+  /* Opcional: Estilos para cuando la navegación es más pequeña (responsive) */
+  @media (max-width: 768px) {
+    .navbar-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .navbar-brand {
+      margin-bottom: 15px;
+    }
+  
+    .navbar-links {
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    .navbar-links li {
+      margin: 10px 0;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  catalogooooooooooooo
+
+
+
+
+
+
+
+  .main-navbar {
+    background-color: #e6e6fa; /* Lavanda claro */
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex; /* Para centrar la lista */
+    justify-content: center; /* Centra horizontalmente el contenido de la barra */
+  }
+  
+  .navbar-links-horizontal {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Mantiene los elementos de la lista en línea */
+    gap: 60px; /* Espaciado entre los elementos de la lista */
+  }
+  
+  .navbar-links-horizontal li {
+    /* No se necesita margen aquí si usamos 'gap' */
+  }
+  
+  .navbar-links-horizontal a {
+    color: #800080; /* Púrpura */
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 8px 15px;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  .navbar-links-horizontal a:hover {
+    color: #4b0082; /* Índigo (un lila más oscuro) */
+    transform: translateY(-2px); /* Un pequeño efecto de levantamiento */
+  }
+  
+  .navbar-links-horizontal a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: #9932cc; /* Orquídea Oscura (un lila vibrante) */
+    bottom: -5px; /* Posiciona el subrayado debajo del texto */
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+  }
+  
+  .navbar-links-horizontal a:hover::after {
+    width: 100%;
+  }
+  
+  /* Opcional: Estilos para cuando la navegación es más pequeña (responsive) */
+  @media (max-width: 600px) {
+    .navbar-links-horizontal {
+      flex-direction: column; /* Apila los enlaces verticalmente */
+      gap: 15px; /* Reduce el espaciado vertical */
+      align-items: center; /* Centra los elementos apilados */
+    }
+  }
+
+////////////////////////////////////////////////////////////////////////////////
+
