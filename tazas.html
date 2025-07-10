@@ -3,183 +3,476 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tazas</title>
-    <link rel="icon" type="image/png" sizes="16x16" href="img/ICONOMEJ.png">
+    <title>Tazas - Catálogo</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="img/LOGOASOMO.jpeg">
     <style>
-        /* Estilos Generales */
+        /* Paleta de colores */
+        :root {
+            --color-rojo-oscuro: #9c1e1e; /* Color principal rojo fuerte */
+            --color-rojo-medio: #b04444; /* Rojo un poco más claro */
+            --color-rojo-claro: #cd0825; /* Rojo brillante para acentos */
+            --color-crema: #f2f0eb; /* Crema para fondos y texto claro */
+            --color-blanco: #ffffff; /* Blanco puro */
+            --color-gris-oscuro: #4a4a4a; /* Para texto principal */
+            --color-gris-medio: #666; /* Para texto secundario */
+            --color-gris-claro: #e0e0e0; /* Para bordes sutiles */
+        }
+
         body {
             font-family: 'Times New Roman', Times, serif;
+            color: var(--color-gris-oscuro);
             margin: 0;
             padding: 0;
-            background-color: #d9bfe2;
-            color: #333;
+            background-color: var(--color-crema);
         }
 
         header {
-            background-color: #875a92;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-
-        h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-
-        
-        .catalogo-container {
-            display: flex; 
-            flex-wrap: wrap; 
-            justify-content: center; 
-            gap: 30px; 
-            padding: 40px 20px;
-        }
-
-        .catalogo-item {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px; 
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background-color: #9c1e1e;
+            color: #ffffff;
             padding: 20px;
             text-align: center;
-            width: 280px; 
-            transition: transform 0.2s ease-in-out; 
+            /* Agregamos Flexbox para alinear el logo y el texto */
+            display: flex;
+            align-items: center; /* Alinea verticalmente al centro */
+            justify-content: center; /* Centra el contenido horizontalmente */
+            gap: 15px; /* Espacio entre el logo y el texto */
         }
 
-        .catalogo-item:hover {
-            transform: translateY(-5px); 
+        /* Estilo para el logo en el header */
+        .header-logo {
+            height: 60px; /* Ajusta este valor según el tamaño deseado de tu logo */
+            width: auto;
+            vertical-align: middle; /* Ayuda a alinear con el texto */
+            /* filter: drop-shadow(0 0 5px rgba(0,0,0,0.3)); Opcional: para darle un poco de sombra */
         }
 
-        .catalogo-item img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 4px; 
-            margin-bottom: 15px;
+        header h1 {
+            color: #ffffff;
+            margin: 0; /* Elimina el margen predeterminado del h1 */
+            display: flex; /* Usamos flexbox también para el h1 si tiene varios elementos */
+            align-items: center; /* Alinea los elementos dentro del h1 (ej: logo y texto) */
+            gap: 10px; /* Espacio entre los elementos dentro del h1 */
         }
 
-        .catalogo-item h2 {
-            font-size: 1.5em;
+        h2, h3 {
+            color: var(--color-rojo-oscuro); /* Mantener el color original de h2, h3 del catálogo */
+        }
+
+        /* Asegúrate de que este 'nav' no entre en conflicto con .main-navbar o .product-navbar */
+        /* Si este 'nav' es redundante o un remanente, considera eliminarlo */
+        nav {
+            background-color: #9c1e1e; /* Considera usar var(--color-rojo-oscuro) */
+            color: #fff; /* Considera usar var(--color-blanco) */
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff; /* Considera usar var(--color-blanco) */
+            text-decoration: none;
+            padding: 10px;
+        }
+        section {
+            padding: 20px;
+        }
+        footer {
+            background-color: var(--color-rojo-oscuro); /* Cambiado a rojo oscuro */
+            color: var(--color-blanco);
+            padding: 20px;
+            text-align: center;
+            margin-top: 50px; /* Espacio superior */
+        }
+        @media only screen and (max-width: 600px) {
+            nav {
+                display: block;
+            }
+            nav a {
+                display: block;
+                margin-bottom: 10px;
+            }
+        }
+        .main-navbar {
+            background-color: var(--color-crema);
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar-links-horizontal {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 60px;
+        }
+
+        .navbar-links-horizontal li {
+            /* No styles needed here, styles are on the anchor */
+        }
+
+        .navbar-links-horizontal a {
+            color: var(--color-rojo-oscuro); /* Ajustado para mejor contraste con fondo claro */
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 8px 15px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .navbar-links-horizontal a:hover {
+            color: var(--color-rojo-medio);
+            transform: translateY(-2px);
+        }
+
+        .navbar-links-horizontal a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background-color: var(--color-rojo-medio);
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+
+        .navbar-links-horizontal a:hover::after {
+            width: 100%;
+        }
+
+        /* por si las duditas*/
+        @media (max-width: 600px) {
+            .navbar-links-horizontal {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+        }
+
+        .product-navbar {
+            background-color: var(--color-crema); /* Usamos la variable crema */
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            font-family: 'Arial', sans-serif;
+        }
+        .navbar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .navbar-brand {
+            color: var(--color-rojo-medio); /* Usamos la variable rojo medio */
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .navbar-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar-links li {
+            margin-left: 30px;
+        }
+
+        .navbar-links a {
+            color: var(--color-rojo-claro); /* Usamos la variable rojo claro */
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 500;
+            padding: 5px 0;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-links a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--color-rojo-oscuro); /* Usamos la variable rojo oscuro */
+            transition: width 0.3s ease;
+        }
+
+        .navbar-links a:hover {
+            color: var(--color-rojo-oscuro); /* Usamos la variable rojo oscuro */
+        }
+
+        .navbar-links a:hover::after {
+            width: 100%;
+        }
+
+        /* solo por si las dudas*/
+        @media (max-width: 768px) {
+            .navbar-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .navbar-brand {
+                margin-bottom: 15px;
+            }
+
+            .navbar-links {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .navbar-links li {
+                margin: 10px 0;
+            }
+        }
+        /* Estilos específicos del catálogo */
+        .catalog-section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .product-card {
+            background-color: var(--color-blanco);
+            border: 1px solid var(--color-gris-claro);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            overflow: hidden; /* Asegura que la imagen no se desborde */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px; /* Altura fija para las imágenes */
+            overflow: hidden;
+            border-bottom: 1px solid var(--color-gris-claro);
+            display: flex; /* Para centrar la imagen dentro si es necesario */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Recorta la imagen para cubrir el área sin distorsionar */
+            display: block;
+        }
+
+        .product-info {
+            padding: 20px;
+            flex-grow: 1; /* Permite que la información ocupe el espacio restante */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-info h3 {
+            color: var(--color-rojo-oscuro);
+            font-size: 1.4em;
             margin-top: 0;
             margin-bottom: 10px;
-            color: #ba4dcb;
         }
 
-        .catalogo-item p {
-            font-size: 0.9em;
+        .product-info p {
+            color: var(--color-gris-medio);
+            font-size: 0.95em;
             line-height: 1.5;
             margin-bottom: 15px;
-            color: #555;
         }
 
-        .catalogo-item .precio {
-            display: block; 
-            font-size: 1.8em;
+        .product-price {
+            font-size: 1.3em;
             font-weight: bold;
-            color: #28a745; 
-            margin-bottom: 20px;
+            color: var(--color-rojo-claro); /* Rojo más brillante para el precio */
+            margin-bottom: 15px;
+            text-align: center; /* ¡Cambiado de 'right' a 'center'! */
         }
 
-        .catalogo-item button {
-            background-color: #b977d8;
-            color: white;
-            padding: 10px 20px;
-            border: none;
+        .buy-button {
+            display: inline-block;
+            background-color: var(--color-rojo-claro);
+            color: var(--color-blanco);
+            padding: 12px 25px;
             border-radius: 5px;
-            cursor: pointer;
-            font-size: 1em;
-            transition: background-color 0.2s;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            align-self: center; /* Centra el botón si es un flex item */
+            margin-top: auto; /* Empuja el botón hacia abajo si el contenido es variable */
         }
 
-        .catalogo-item button:hover {
-            background-color: #7a00b3;
+        .buy-button:hover {
+            background-color: var(--color-rojo-oscuro);
         }
 
-        /* Footer */
-        footer {
-            background-color: #513758;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 40px;
+        /* Estilos para el footer (puedes reusar el de tus otras páginas) */
+        footer h3 {
+            color: var(--color-blanco); /* Título del footer en blanco */
+            margin-bottom: 15px;
+        }
+
+        .social-nav h1 a {
+            color: var(--color-blanco);
+            margin: 0 10px;
+            font-size: 30px; /* Tamaño de los iconos de redes sociales */
+            transition: color 0.3s ease;
+        }
+
+        .social-nav h1 a:hover {
+            color: var(--color-crema); /* Cambia a crema al pasar el mouse */
+        }
+
+        footer p {
+            margin-top: 15px;
+            font-size: 0.9em;
+            color: rgba(255, 255, 255, 0.8);
         }
     </style>
+    <script src="https://kit.fontawesome.com/14bdcc382b.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <nav id="atras">
-        <ul>
-          <li>
-          </li>
-        <a href="index.html">Inicio</a>
-        </li>
-       </ul>
-      </nav>
     <header>
-        <h1>Tazas</h1>
+        <img src="img/SNOOPYHEART.jpg" alt="Logo SnoopyshoppMT" class="header-logo">
+        <h1>SnoopyshoppMT</h1>
     </header>
-
-    <main class="catalogo-container">
-        <div class="catalogo-item">
-            <img src="img/tazaceleste.jpeg" alt="Producto 1">
-            <h2>Taza Edición Pascua</h2>
-            <p>Taza de porcelana con estampa de pascua de color celeste.</p>
-            <span class="precio">$25.000</span>
-            <button>Agregar al carrito</button>
+    <nav class="main-navbar">
+        <ul class="navbar-links-horizontal">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+    <nav class="product-navbar">
+        <div class="navbar-container">
+            <a href="#" class="navbar-brand">¡ Tazas !</a>
+            <ul class="navbar-links">
+                <li><a href="indumentaria.html">Indumentaria</a></li>
+                <li><a href="tazas.html">Tazas</a></li>
+                <li><a href="mochilatote.html">Mochilas/Tote</a></li>
+                <li><a href="libreria.html">Librería</a></li>
+            </ul>
         </div>
+    </nav>
 
-        <div class="catalogo-item">
-            <img src="img/tazarockstar.jpeg" alt="Producto 2">
-            <h2>Taza Rockstar</h2>
-            <p>Taza de ceramica con la estampa de snoopy versión rockstar.</p>
-            <span class="precio">$30.000</span>
-            <button>Ver Detalles</button>
+    <section class="catalog-section">
+        <h2>Descubre la Alegría de Snoopy en Cada Producto</h2>
+        <p>Explora nuestra selección cuidadosamente elegida de tazas de Snoopy y sus amigos. ¡Encuentra dónde beber tus cosas favoritas!</p>
+
+        <div class="catalog-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="img/tazarockstar.jpeg" alt="Remera con letras azules">
+                </div>
+                <div class="product-info">
+                    <h3>Rockstar</h3>
+                    <p>Con una capacidad de 330 ml, es ideal para tu café de la mañana o tu té de la tarde. Además, es apta para microondas y lavavajillas, lo que la hace práctica para el uso diario. </p>
+                    <div class="product-price">$15.500</div>
+                    <a href="formadepagoT.html" class="buy-button">Comprar Ahora</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="img/tazaverde.jpeg" alt="Medias de Snoopy">
+                </div>
+                <div class="product-info">
+                    <h3>Taza estilo Top Green</h3>
+                    <p>Ideal para el café de la mañana, un té relajante o cualquier bebida que te apetezca, esta taza seguro te sacará una sonrisa. Su tamaño cómodo y diseño clásico la convierten en un imprescindible para tu colección de Snoopy.</p>
+                    <div class="product-price">$12.500</div>
+                    <a href="formadepagoT.html" class="buy-button">Comprar Ahora</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="img/tazarojaaa.jpeg" alt="Gorra Snoopy">
+                </div>
+                <div class="product-info">
+                    <h3>Taza redlove</h3>
+                    <p>Con una capacidad ideal para tu bebida favorita, esta taza es perfecta para comenzar el día con una dosis de alegría o para disfrutar de un momento de tranquilidad. Es un regalo ideal para cualquier fan de Snoopy o para esa persona especial que comparte tu corazón.</p>
+                    <div class="product-price">$14.200</div>
+                    <a href="formadepagoT.html" class="buy-button">Comprar Ahora</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="img/tazaceleste.jpeg" alt="Buzo Snoopy">
+                </div>
+                <div class="product-info">
+                    <h3>Taza Version Pascua</h3>
+                    <p>Disfruta de tus momentos de tranquilidad con esta encantadora taza de cerámica, que presenta a Snoopy divirtiéndose con un cesto de pícnic, rodeado de delicadas flores celestes. El borde y el asa de la taza, también en un suave tono celeste, complementan a la perfección el diseño campestre y alegre.</p>
+                    <div class="product-price">$16.000</div>
+                    <a href="formadepagoT.html" class="buy-button">Comprar Ahora</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="img/tazacara.jpg" alt="Remera de Snoopy">
+                </div>
+                <div class="product-info">
+                    <h3>Face Head Cute"</h3>
+                    <p>Despierta con la sonrisa de Snoopy cada mañana! Esta original taza de cerámica captura la adorable cara de Snoopy en un diseño 3D único. Con detalles fieles al personaje, como sus orejas caídas y su nariz característica, esta taza es una pieza imprescindible para cualquier fan.</p>
+                    <div class="product-price">$18.500</div>
+                    <a href="formadepagoT.html" class="buy-button">Comprar Ahora</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="img/tazaazul.jpeg" alt="Zapatillas Snoopy">
+                </div>
+                <div class="product-info">
+                    <h3>Blue Preiod</h3>
+                    <p>Es la compañera perfecta para tus momentos de relax, ya sea disfrutando de un café, un té o cualquier bebida caliente mientras te desconectas. Ideal para los amantes de la música y, por supuesto, para cualquier fan de Snoopy que aprecie un toque de estilo y diversión en su día a día.</p>
+                    <div class="product-price">$10.800</div>
+                    <a href="formadepagoT.html" class="buy-button">Comprar Ahora</a>
+                </div>
+            </div>
+
         </div>
-
-        <div class="catalogo-item">
-            <img src="img/tazarojaaa.jpeg" alt="Producto 3">
-            <h2>Taza San Valentin</h2>
-            <p>Taza de porcelana de color rojo y blanco, con tematica San Valentin.</p>
-            <span class="precio">$20.000</span>
-            <button>Ver Detalles</button>
-        </div>
-
-        <div class="catalogo-item">
-            <img src="img/tazaverde.jpeg" alt="Producto 3">
-            <h2>Taza Cute</h2>
-            <p>Taza de ceramica esmaltalada de color blanco con lunares color indigo.</p>
-            <span class="precio">$35.000</span>
-            <button>Ver Detalles</button>
-        </div>
-
-        <div class="catalogo-item">
-            <img src="img/tazacara.jpg" alt="Producto 3">
-            <h2>Taza FaceSnoopy</h2>
-            <p>Taza de porcelana del rostro de snoopy.</p>
-            <span class="precio">$60.500</span>
-            <button>Ver Detalles</button>
-        </div>
-
-        <div class="catalogo-item">
-            <img src="img/tazaamarilla.jpeg" alt="Producto 3">
-            <h2>Taza Autumn</h2>
-            <p>Taza de ceramica de tematica otoñal, con detalles grabados</p>
-            <span class="precio">$28.000</span>
-            <button>Ver Detalles</button>
-        </div>
-
-        <div class="catalogo-item">
-            <img src="img/tazaazul.jpeg" alt="Producto 3">
-            <h2>Taza Blue Period</h2>
-            <p>Taza de ceramica artesanal con snoopy escuchando seguramente los mejores temas airbag.</p>
-            <span class="precio">$16.000</span>
-            <button>Ver Detalles</button>
-        </div>
-
-        </main>
+    </section>
 
     <footer>
-        <p>&copy; SnoopyshoppMT</p>
+        <p>
+        <h3>¡MIRÁ NUESTRAS REDES! </h3>
+        </p>
+        <nav class="social-nav">
+            <h1>
+                <a href="https://www.facebook.com/snoopyshoppmt" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.x.com/snoopyshoppmt" target="_blank"><i class="fab fa-x"></i></a>
+                <a href="https://www.instagram.com/snoopyshoppmt/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://wa.me/541139159704" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </h1>
+        </nav>
+        <p>© 2025 SnoopyshoppMT.</p>
     </footer>
+
 </body>
 </html>

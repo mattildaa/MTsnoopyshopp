@@ -3,185 +3,476 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Libreria</title>
-    <link rel="icon" type="image/png" sizes="16x16" href="img/ICONOMEJ.png">
+    <title>Librería - Catálogo</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="img/LOGOASOMO.jpeg">
     <style>
-        
+        /* Paleta de colores */
+        :root {
+            --color-rojo-oscuro: #9c1e1e; /* Color principal rojo fuerte */
+            --color-rojo-medio: #b04444; /* Rojo un poco más claro */
+            --color-rojo-claro: #cd0825; /* Rojo brillante para acentos */
+            --color-crema: #f2f0eb; /* Crema para fondos y texto claro */
+            --color-blanco: #ffffff; /* Blanco puro */
+            --color-gris-oscuro: #4a4a4a; /* Para texto principal */
+            --color-gris-medio: #666; /* Para texto secundario */
+            --color-gris-claro: #e0e0e0; /* Para bordes sutiles */
+        }
+
         body {
             font-family: 'Times New Roman', Times, serif;
+            color: var(--color-gris-oscuro);
             margin: 0;
             padding: 0;
-            background-color: #d9bfe2;
-            color: #333;
+            background-color: var(--color-crema);
         }
 
         header {
-            background-color: #875a92;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-
-        h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-
-        
-        .catalogo-container {
-            display: flex; 
-            flex-wrap: wrap; 
-            justify-content: center; 
-            gap: 30px; 
-            padding: 40px 20px;
-        }
-
-        
-        .catalogo-item {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background-color: #9c1e1e;
+            color: #ffffff;
             padding: 20px;
             text-align: center;
-            width: 280px; 
-            transition: transform 0.2s ease-in-out; 
+            /* Agregamos Flexbox para alinear el logo y el texto */
+            display: flex;
+            align-items: center; /* Alinea verticalmente al centro */
+            justify-content: center; /* Centra el contenido horizontalmente */
+            gap: 15px; /* Espacio entre el logo y el texto */
         }
 
-        .catalogo-item:hover {
-            transform: translateY(-5px); 
+        /* Estilo para el logo en el header */
+        .header-logo {
+            height: 60px; /* Ajusta este valor según el tamaño deseado de tu logo */
+            width: auto;
+            vertical-align: middle; /* Ayuda a alinear con el texto */
+            /* filter: drop-shadow(0 0 5px rgba(0,0,0,0.3)); Opcional: para darle un poco de sombra */
         }
 
-        .catalogo-item img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 4px; 
-            margin-bottom: 15px;
+        header h1 {
+            color: #ffffff;
+            margin: 0; /* Elimina el margen predeterminado del h1 */
+            display: flex; /* Usamos flexbox también para el h1 si tiene varios elementos */
+            align-items: center; /* Alinea los elementos dentro del h1 (ej: logo y texto) */
+            gap: 10px; /* Espacio entre los elementos dentro del h1 */
         }
 
-        .catalogo-item h2 {
-            font-size: 1.5em;
+        h2, h3 {
+            color: var(--color-rojo-oscuro); /* Mantener el color original de h2, h3 del catálogo */
+        }
+
+        /* Asegúrate de que este 'nav' no entre en conflicto con .main-navbar o .product-navbar */
+        /* Si este 'nav' es redundante o un remanente, considera eliminarlo */
+        nav {
+            background-color: #9c1e1e; /* Considera usar var(--color-rojo-oscuro) */
+            color: #fff; /* Considera usar var(--color-blanco) */
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff; /* Considera usar var(--color-blanco) */
+            text-decoration: none;
+            padding: 10px;
+        }
+        section {
+            padding: 20px;
+        }
+        footer {
+            background-color: var(--color-rojo-oscuro); /* Cambiado a rojo oscuro */
+            color: var(--color-blanco);
+            padding: 20px;
+            text-align: center;
+            margin-top: 50px; /* Espacio superior */
+        }
+        @media only screen and (max-width: 600px) {
+            nav {
+                display: block;
+            }
+            nav a {
+                display: block;
+                margin-bottom: 10px;
+            }
+        }
+        .main-navbar {
+            background-color: var(--color-crema);
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar-links-horizontal {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 60px;
+        }
+
+        .navbar-links-horizontal li {
+            /* No styles needed here, styles are on the anchor */
+        }
+
+        .navbar-links-horizontal a {
+            color: var(--color-rojo-oscuro); /* Ajustado para mejor contraste con fondo claro */
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 8px 15px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .navbar-links-horizontal a:hover {
+            color: var(--color-rojo-medio);
+            transform: translateY(-2px);
+        }
+
+        .navbar-links-horizontal a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background-color: var(--color-rojo-medio);
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+
+        .navbar-links-horizontal a:hover::after {
+            width: 100%;
+        }
+
+        /* por si las duditas*/
+        @media (max-width: 600px) {
+            .navbar-links-horizontal {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+        }
+
+        .product-navbar {
+            background-color: var(--color-crema); /* Usamos la variable crema */
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            font-family: 'Arial', sans-serif;
+        }
+        .navbar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .navbar-brand {
+            color: var(--color-rojo-medio); /* Usamos la variable rojo medio */
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .navbar-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar-links li {
+            margin-left: 30px;
+        }
+
+        .navbar-links a {
+            color: var(--color-rojo-claro); /* Usamos la variable rojo claro */
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 500;
+            padding: 5px 0;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-links a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--color-rojo-oscuro); /* Usamos la variable rojo oscuro */
+            transition: width 0.3s ease;
+        }
+
+        .navbar-links a:hover {
+            color: var(--color-rojo-oscuro); /* Usamos la variable rojo oscuro */
+        }
+
+        .navbar-links a:hover::after {
+            width: 100%;
+        }
+
+        /* solo por si las dudas*/
+        @media (max-width: 768px) {
+            .navbar-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .navbar-brand {
+                margin-bottom: 15px;
+            }
+
+            .navbar-links {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .navbar-links li {
+                margin: 10px 0;
+            }
+        }
+        /* Estilos específicos del catálogo */
+        .catalog-section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .product-card {
+            background-color: var(--color-blanco);
+            border: 1px solid var(--color-gris-claro);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            overflow: hidden; /* Asegura que la imagen no se desborde */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px; /* Altura fija para las imágenes */
+            overflow: hidden;
+            border-bottom: 1px solid var(--color-gris-claro);
+            display: flex; /* Para centrar la imagen dentro si es necesario */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Recorta la imagen para cubrir el área sin distorsionar */
+            display: block;
+        }
+
+        .product-info {
+            padding: 20px;
+            flex-grow: 1; /* Permite que la información ocupe el espacio restante */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-info h3 {
+            color: var(--color-rojo-oscuro);
+            font-size: 1.4em;
             margin-top: 0;
             margin-bottom: 10px;
-            color: #ba4dcb;
         }
 
-        .catalogo-item p {
-            font-size: 0.9em;
+        .product-info p {
+            color: var(--color-gris-medio);
+            font-size: 0.95em;
             line-height: 1.5;
             margin-bottom: 15px;
-            color: #555;
         }
 
-        .catalogo-item .precio {
-            display: block; 
-            font-size: 1.8em;
+        .product-price {
+            font-size: 1.3em;
             font-weight: bold;
-            color: #28a745; 
-            margin-bottom: 20px;
+            color: var(--color-rojo-claro); /* Rojo más brillante para el precio */
+            margin-bottom: 15px;
+            text-align: center; /* ¡Cambiado de 'right' a 'center'! */
         }
 
-        .catalogo-item button {
-            background-color: #b977d8;
-            color: white;
-            padding: 10px 20px;
-            border: none;
+        .buy-button {
+            display: inline-block;
+            background-color: var(--color-rojo-claro);
+            color: var(--color-blanco);
+            padding: 12px 25px;
             border-radius: 5px;
-            cursor: pointer;
-            font-size: 1em;
-            transition: background-color 0.2s;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            align-self: center; /* Centra el botón si es un flex item */
+            margin-top: auto; /* Empuja el botón hacia abajo si el contenido es variable */
         }
 
-        .catalogo-item button:hover {
-            background-color: #7a00b3;
+        .buy-button:hover {
+            background-color: var(--color-rojo-oscuro);
         }
 
-        /* Footer */
-        footer {
-            background-color: #513758;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 40px;
+        /* Estilos para el footer (puedes reusar el de tus otras páginas) */
+        footer h3 {
+            color: var(--color-blanco); /* Título del footer en blanco */
+            margin-bottom: 15px;
+        }
+
+        .social-nav h1 a {
+            color: var(--color-blanco);
+            margin: 0 10px;
+            font-size: 30px; /* Tamaño de los iconos de redes sociales */
+            transition: color 0.3s ease;
+        }
+
+        .social-nav h1 a:hover {
+            color: var(--color-crema); /* Cambia a crema al pasar el mouse */
+        }
+
+        footer p {
+            margin-top: 15px;
+            font-size: 0.9em;
+            color: rgba(255, 255, 255, 0.8);
         }
     </style>
+    <script src="https://kit.fontawesome.com/14bdcc382b.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <nav id="atras">
-        <ul>
-          <li>
-          </li>
-        <a href="index.html">Inicio</a>
-        </li>
-       </ul>
-      </nav>
     <header>
-        <h1>Librería</h1>
+        <img src="img/SNOOPYHEART.jpg" alt="Logo SnoopyshoppMT" class="header-logo">
+        <h1>SnoopyshoppMT</h1>
     </header>
-
-    <main class="catalogo-container">
-        <div class="catalogo-item">
-            <img src="img/portalapiz.jpeg" alt="Producto 1">
-            <h2>House Soport</h2>
-            <p>Porta lapices en forma de la iconica casa de snoopy.</p>
-            <span class="precio">$10.500 c/u</span>
-            <button>Agregar al carrito</button>
+    <nav class="main-navbar">
+        <ul class="navbar-links-horizontal">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+    <nav class="product-navbar">
+        <div class="navbar-container">
+            <a href="#" class="navbar-brand">¡ Librería !</a>
+            <ul class="navbar-links">
+                <li><a href="indumentaria.html">Indumentaria</a></li>
+                <li><a href="tazas.html">Tazas</a></li>
+                <li><a href="mochilatote.html">Mochilas/Tote</a></li>
+                <li><a href="libreria.html">Librería</a></li>
+            </ul>
         </div>
+    </nav>
 
-        <div class="catalogo-item">
-            <img src="img/calcu.jpeg" alt="Producto 2">
-            <h2>Calculadora SnoopyMath</h2>
-            <p>Calculadora cientifica de snoopy.</p>
-            <span class="precio">$20.000 c/u</span>
-            <button>Agregar al carrito</button>
+    <section class="catalog-section">
+        <h2>Descubre la Alegría de Snoopy en Cada Producto</h2>
+        <p>Explora nuestra selección cuidadosamente elegida de artículos de Snoopy y sus amigos. ¡Encuentra el detalle perfecto!</p>
+
+        <div class="catalog-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="img/anotador.jpg" alt="Remera con letras azules">
+                </div>
+                <div class="product-info">
+                    <h3>Mini agenda Camp</h3>
+                    <p>No dejes que ninguna idea se escape! Estos encantadores mini anotadores de Snoopy son el accesorio perfecto para tus apuntes rápidos, listas de compras o mensajes inspiradores, con un toque de aventura y la ternura inconfundible de Peanuts.</p>
+                    <div class="product-price">$5.990</div>
+                    <a href="formasdepagoL.html" class="buy-button">Comprar Ahora</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="img/cuaderno.jpeg" alt="Medias de Snoopy">
+                </div>
+                <div class="product-info">
+                    <h3>Pack de anotadores pastel</h3>
+                    <p>Preparate para planificar, anotar y soñar con la compañía de tus personajes favoritos de Peanuts! Este encantador pack de 6 agendas/cuadernos es ideal para estudiantes, profesionales, amantes de la papelería o simplemente para quienes buscan un toque de diversión y organización en su día a día.</p>
+                    <div class="product-price">$12.500</div>
+                    <a href="formasdepagoL.html" class="buy-button">Comprar Ahora</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="img/cartu.jpeg" alt="Gorra Snoopy">
+                </div>
+                <div class="product-info">
+                    <h3>Cartuchera blue l.</h3>
+                    <p>Con su forma rectangular y tamaño ideal, esta cartuchera es perfecta para guardar lápices, lapiceras, marcadores, gomas, sacapuntas y otros útiles escolares o de oficina. También es útil como estuche para maquillaje o pequeños objetos personales.</p>
+                    <div class="product-price">$8.200</div>
+                    <a href="formasdepagoL.html" class="buy-button">Comprar Ahora</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="img/lapiceras.jpg" alt="Buzo Snoopy">
+                </div>
+                <div class="product-info">
+                    <h3>snuppencil</h3>
+                    <p>Llevá la alegría y el encanto de Snoopy a tus notas, dibujos y firmas diarias! Este set de lapiceras es el complemento perfecto para cualquier fan de Peanuts, añadiendo un toque de diversión a tus tareas escolares, de oficina o personales.</p>
+                    <div class="product-price">$3.000</div>
+                    <a href="formasdepagoL.html" class="buy-button">Comprar Ahora</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="img/Mini Calendario de escritorio Snoopy 2025, calendario con soporte de Anime, planificador diario,.jpeg" alt="Remera de Snoopy">
+                </div>
+                <div class="product-info">
+                    <h3>Calendario Mini</h3>
+                    <p>Dale un toque de ternura y diversión a tu escritorio, mesita de luz o cualquier espacio con estos encantadores mini calendarios de Snoopy para el 2026! Son el compañero perfecto para planificar tu día a día con una sonrisa.</p>
+                    <div class="product-price">$4.500</div>
+                    <a href="formasdepagoL.html" class="buy-button">Comprar Ahora</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="img/portalapiz.jpeg" alt="Zapatillas Snoopy">
+                </div>
+                <div class="product-info">
+                    <h3>House Soport</h3>
+                    <p>Además de ser un portalápices, la casita tiene una abertura frontal que revela un pequeño compartimento, ideal para guardar notas adhesivas, clips o pequeños recordatorios, con una ilustración de Charlie Brown asomándose.</p>
+                    <div class="product-price">$7.800</div>
+                    <a href="formasdepagoL.html" class="buy-button">Comprar Ahora</a>
+                </div>
+            </div>
+
         </div>
-
-        <div class="catalogo-item">
-            <img src="img/cuaderno.jpeg" alt="Producto 3">
-            <h2>Anotador Peanuts</h2>
-            <p>Pack de 5 anotadores de snoopy de 15x10cm.</p>
-            <span class="precio">$15.000</span>
-            <button>Agregar al carrito</button>
-        </div>
-
-        <div class="catalogo-item">
-            <img src="img/lapiceras.jpg" alt="Producto 3">
-            <h2>SnoopyPencil</h2>
-            <p>Lapicera con cabezal de snoopy</p>
-            <p>Colores de tinta: Rjo, Azul, Negro y Amarillo.</p>
-            <span class="precio">$2.000 c/u</span>
-            <button>Agregar al carrito</button>
-        </div>
-
-        <div class="catalogo-item">
-            <img src="img/pines.jpeg" alt="Producto 3">
-            <h2>Button Colection</h2>
-            <p>Pack de 4 pines llamativos y esmaltados.</p>
-            <span class="precio">$3.500</span>
-            <button>Agregar al carrito</button>
-        </div>
-
-        <div class="catalogo-item">
-            <img src="img/anotador.jpg" alt="Producto 3">
-            <h2>Mini Bosque</h2>
-            <p>Anotador de bolsillo color verde y blanco, versión camp.</p>
-            <span class="precio">$5.500 c/u</span>
-            <button>Agregar al carrito</button>
-        </div>
-
-        <div class="catalogo-item">
-            <img src="img/Mini Calendario de escritorio Snoopy 2025, calendario con soporte de Anime, planificador diario,.jpeg" alt="Producto 3">
-            <h2>Mini Calendaario</h2>
-            <p>Calendario con sosten propio de multiples colores, tamaño: 7x6.</p>
-            <span class="precio">$1.500 c/u</span>
-            <button>Agregar al carrito</button>
-        </div>
-
-        </main>
+    </section>
 
     <footer>
-        <p>&copy;SnoopyShoppMT</p>
+        <p>
+        <h3>¡MIRÁ NUESTRAS REDES! </h3>
+        </p>
+        <nav class="social-nav">
+            <h1>
+                <a href="https://www.facebook.com/snoopyshoppmt" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.x.com/snoopyshoppmt" target="_blank"><i class="fab fa-x"></i></a>
+                <a href="https://www.instagram.com/snoopyshoppmt/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://wa.me/541139159704" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </h1>
+        </nav>
+        <p>© 2025 SnoopyshoppMT.</p>
     </footer>
+
 </body>
 </html>

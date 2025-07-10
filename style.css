@@ -1,28 +1,31 @@
-
-/*PARTE DE CONTACTO*/
-
-body {
-    font-family: 'Times New Roman', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    color: #000000;
-    
+/* --- Estilos generales para HTML y Body --- */
+/* Aseguran que la página ocupe el 100% del alto y ancho de la ventana */
+html, body {
+    height: 100%; /* El html y el body ocupan el 100% del alto disponible */
+    margin: 0; /* Elimina los márgenes predeterminados del navegador */
+    padding: 0; /* Elimina el padding predeterminado del navegador */
+    box-sizing: border-box; /* Incluye el padding y el borde en el tamaño total del elemento */
 }
 
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #000000;
+    /* No usamos flexbox en el body directamente para permitir que el contenido fluya */
+}
+
+/* --- Contenedor principal de Contacto --- */
 .contact-container {
     background-color: #e2cfe8;
     padding: 40px;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 600px;
+    width: 90%; /* Puedes aumentar esto a 95% o 100% si quieres que se extienda más */
+    /* max-width: 600px; /* Si quieres que ocupe toda la pantalla, considera eliminar o aumentar este valor */
     text-align: center;
+    margin: 50px auto; /* Centra el contenedor y le da un margen superior/inferior */
 }
 
-h2 {
+h2.cnt {
     color: #983bb4; 
     margin-bottom: 15px;
     font-size: 2.2em;
@@ -50,7 +53,7 @@ p {
 .contact-form input[type="text"],
 .contact-form input[type="email"],
 .contact-form textarea {
-    width: calc(100% - 20px);
+    width: calc(100% - 24px); /* Ajusta el width para compensar el padding */
     padding: 12px;
     border: 1px solid #6b3e7b;
     border-radius: 8px;
@@ -112,257 +115,253 @@ p {
     text-decoration: underline;
 }
 
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
+/* --- Navegación "Atrás" --- */
+#atras ul {
+    list-style: none;
     padding: 0;
-    box-sizing: border-box;
-  }
-  
-  .social-nav {
+    margin: 0;
+    text-align: left;
+}
+
+#atras li a {
+    color: #863db6;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 0;
+    display: inline-block;
+}
+
+#atras li a:hover {
+    text-decoration: underline;
+}
+
+/* --- Navegación de Redes Sociales --- */
+.social-nav {
     background-color: #e2cfe8;
     padding: 10px;
     text-align: center;
-  }
-  
-  .social-nav a {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    width: 100%; /* Asegura que la barra de redes sociales ocupe todo el ancho */
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+}
+
+.social-nav a {
     color: #865599;
     text-decoration: none;
-    margin: 0 10px;
     font-size: 24px;
-  }
-  
-  .social-nav a:hover {
+    transition: color 0.3s ease;
+}
+
+.social-nav a:hover {
     color: #692575; 
-  }
+}
+
+/* --- Pie de Página (Footer) --- */
+#pie {
+    margin-top: 30px;
+    padding: 20px; /* Añadí padding para que el contenido no esté pegado al borde */
+    border-top: 1px solid #7c0a9f;
+    text-align: center;
+    width: 100%; /* Asegura que el footer ocupe todo el ancho */
+    box-sizing: border-box;
+}
+
+#pie iframe {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+#pie p {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
 
 
-/* ACÁ TERMINA LA PARTE DE CONTACTO con las redess*/
+/* --- Estilos para la sección de Catálogo (si se usa en otra página) --- */
 
-
-/*parte de catalogo*/
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  .header {
+.header {
     background-color: #fafafa;
     padding: 30px;
     text-align: center;
     font-size: 35px;
-  }
-  
-  .row {
-    display: -webkit-flex;
+    width: 100%;
+    box-sizing: border-box;
+}
+ 
+.row {
     display: flex;
-  }
-  
-  .column {
-    -webkit-flex: 1;
-    -ms-flex: 1;
+    flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
+}
+ 
+.column {
     flex: 1;
     padding: 10px;
-    height: 300px; 
-  }
-  
-  .footer {
+    min-height: 300px;
+    box-sizing: border-box;
+}
+ 
+.footer { /* Si este es un footer diferente al de contacto, asegúrate de que su clase o ID lo distinga */
     background-color: #919191;
     padding: 10px;
     text-align: center;
-  }
-  
-  @media (max-width: 600px) {
+    width: 100%;
+    box-sizing: border-box;
+}
+ 
+@media (max-width: 600px) {
     .row {
-      -webkit-flex-direction: column;
-      flex-direction: column;
+        flex-direction: column;
     }
-  }
-  
-  .product-navbar {
-    background-color: #e0b0ff; /* Lila claro */
+}
+ 
+.product-navbar {
+    background-color: #e0b0ff;
     padding: 15px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     font-family: 'Arial', sans-serif;
-  }
-  
-  .navbar-container {
+    width: 100%;
+    box-sizing: border-box;
+}
+ 
+.navbar-container {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-  }
-  
-  .navbar-brand {
-    color: #6a0dad; /* Lila oscuro para el texto principal */
+}
+ 
+.navbar-brand {
+    color: #6a0dad;
     font-size: 24px;
     font-weight: bold;
     text-decoration: none;
     letter-spacing: 1px;
-  }
-  
-  .navbar-links {
+}
+ 
+.navbar-links {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-  }
-  
-  .navbar-links li {
+}
+ 
+.navbar-links li {
     margin-left: 30px;
-  }
-  
-  .navbar-links a {
-    color: #8a2be2; /* Lila medio para los enlaces */
+}
+ 
+.navbar-links a {
+    color: #8a2be2;
     text-decoration: none;
     font-size: 17px;
     font-weight: 500;
     padding: 5px 0;
     position: relative;
     transition: color 0.3s ease;
-  }
-  
-  .navbar-links a::after {
+}
+ 
+.navbar-links a::after {
     content: '';
     position: absolute;
     left: 0;
     bottom: 0;
     width: 0;
     height: 2px;
-    background-color: #6a0dad; /* Lila oscuro para el subrayado al pasar el ratón */
+    background-color: #6a0dad;
     transition: width 0.3s ease;
-  }
-  
-  .navbar-links a:hover {
-    color: #6a0dad; /* Cambia a lila oscuro al pasar el ratón */
-  }
-  
-  .navbar-links a:hover::after {
+}
+ 
+.navbar-links a:hover {
+    color: #6a0dad;
+}
+ 
+.navbar-links a:hover::after {
     width: 100%;
-  }
-  
-  /* Opcional: Estilos para cuando la navegación es más pequeña (responsive) */
-  @media (max-width: 768px) {
+}
+ 
+@media (max-width: 768px) {
     .navbar-container {
-      flex-direction: column;
-      text-align: center;
+        flex-direction: column;
+        text-align: center;
     }
-  
+ 
     .navbar-brand {
-      margin-bottom: 15px;
+        margin-bottom: 15px;
     }
-  
+ 
     .navbar-links {
-      flex-direction: column;
-      width: 100%;
+        flex-direction: column;
+        width: 100%;
     }
-  
+ 
     .navbar-links li {
-      margin: 10px 0;
+        margin: 10px 0;
     }
-  }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  catalogooooooooooooo
-
-
-
-
-
-
-
-  .main-navbar {
-    background-color: #e6e6fa; /* Lavanda claro */
+/* --- Navegación principal (Índice) --- */
+.main-navbar {
+    background-color: #e6e6fa;
     padding: 15px 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display: flex; /* Para centrar la lista */
-    justify-content: center; /* Centra horizontalmente el contenido de la barra */
-  }
-  
-  .navbar-links-horizontal {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+ 
+.navbar-links-horizontal {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex; /* Mantiene los elementos de la lista en línea */
-    gap: 60px; /* Espaciado entre los elementos de la lista */
-  }
-  
-  .navbar-links-horizontal li {
-    /* No se necesita margen aquí si usamos 'gap' */
-  }
-  
-  .navbar-links-horizontal a {
-    color: #800080; /* Púrpura */
+    display: flex;
+    gap: 60px;
+}
+ 
+.navbar-links-horizontal a {
+    color: #800080;
     text-decoration: none;
     font-size: 18px;
     font-weight: 600;
     padding: 8px 15px;
     transition: all 0.3s ease;
     position: relative;
-  }
-  
-  .navbar-links-horizontal a:hover {
-    color: #4b0082; /* Índigo (un lila más oscuro) */
-    transform: translateY(-2px); /* Un pequeño efecto de levantamiento */
-  }
-  
-  .navbar-links-horizontal a::after {
+}
+ 
+.navbar-links-horizontal a:hover {
+    color: #4b0082;
+    transform: translateY(-2px);
+}
+ 
+.navbar-links-horizontal a::after {
     content: '';
     position: absolute;
     width: 0;
     height: 3px;
-    background-color: #9932cc; /* Orquídea Oscura (un lila vibrante) */
-    bottom: -5px; /* Posiciona el subrayado debajo del texto */
+    background-color: #9932cc;
+    bottom: -5px;
     left: 50%;
     transform: translateX(-50%);
     transition: width 0.3s ease;
-  }
-  
-  .navbar-links-horizontal a:hover::after {
+}
+ 
+.navbar-links-horizontal a:hover::after {
     width: 100%;
-  }
-  
-  /* Opcional: Estilos para cuando la navegación es más pequeña (responsive) */
-  @media (max-width: 600px) {
+}
+ 
+@media (max-width: 600px) {
     .navbar-links-horizontal {
-      flex-direction: column; /* Apila los enlaces verticalmente */
-      gap: 15px; /* Reduce el espaciado vertical */
-      align-items: center; /* Centra los elementos apilados */
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
     }
-  }
-
-////////////////////////////////////////////////////////////////////////////////
-
+}
